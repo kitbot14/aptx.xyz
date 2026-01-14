@@ -2,7 +2,7 @@ let currentUser = null;
 let allPosts = [];
 let displayedPosts = 5;
 let currentPostId = null;
-
+ 
 const API_BASE = '';
 
 async function checkAuth() {
