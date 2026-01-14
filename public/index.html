@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APTx - Plateforme de Publication</title>
+
+    <meta property="og:title" content="APTx - Plateforme de Publication">
+    <meta property="og:description" content="Plateforme professionnelle de publication de contenus texte avec authentification Discord">
+    <meta property="og:image" content="https://i.imgur.com/hbMrXEq.png">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Horst+Blackletter&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <div class="nav-logo-wrapper">
+                    <img src="/public/logotkt.png" alt="Logo APTx" class="nav-logo">
+                </div>
+                <span class="nav-text">APTx</span>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">Accueil</a>
+                <a href="#creators" class="nav-link">Créateurs</a>
+                <a href="#publications" class="nav-link">Publications</a>
+            </div>
+            <div class="nav-auth" id="navAuth">
+                <button class="btn btn-primary" id="loginBtn">
+                    <i class="fab fa-discord"></i> Connexion Discord
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="section hero">
+        <div class="hero-bg-effects">
+            <div class="grid-overlay"></div>
+            <div class="glow-effect glow-1"></div>
+            <div class="glow-effect glow-2"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-logo">
+                    <div class="glow-layer"></div>
+                    <div class="particles-wrapper">
+                        <span class="particle"></span>
+                        <span class="particle"></span>
+                        <span class="particle"></span>
+                        <span class="particle"></span>
+                        <span class="particle"></span>
+                    </div>
+                    <h1>APTx</h1>
+                </div>
+                <p class="hero-subtitle">Plateforme professionnelle de publication</p>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <div class="stat-info">
+                            <span class="stat-number" id="userCount">0</span>
+                            <span class="stat-label">Utilisateurs</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-file-alt"></i>
+                        <div class="stat-info">
+                            <span class="stat-number" id="postCount">0</span>
+                            <span class="stat-label">Publications</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-description">
+                    <p>APTx est une plateforme moderne et sécurisée permettant aux créateurs de partager leurs publications avec la communauté. Authentification via Discord, interface intuitive et fonctionnalités complètes de gestion de contenu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="section-header">
+            <span class="section-badge">Comment ça marche</span>
+            <h2 class="section-title">Simple, rapide et sécurisé</h2>
+            <p class="section-description">
+                Trois étapes claires pour accéder aux publications en toute confiance.
+            </p>
+        </div>
+
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <h3>Connectez-vous</h3>
+                    <p>
+                        Accédez à la page de connexion via Discord avec le bouton se trouvant en haut à droite du site.
+                    </p>
+                </div>
+                <div class="step-icon">
+                    <i class="fa-solid fa-wifi"></i>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <h3>Créez votre contenu</h3>
+                    <p>
+                        Dans la section Publications, cliquez sur "Créer une publication" pour partager vos idées et contenus avec la communauté.
+                    </p>
+                </div>
+                <div class="step-icon">
+                    <i class="fas fa-network-wired"></i>
+                </div>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <h3>Recherchez et interagissez</h3>
+                    <p>
+                        Utilisez la barre de recherche pour découvrir d'autres publications et commentez les contenus qui vous intéressent.
+                    </p>
+                </div>
+                <div class="step-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="support-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Nos soutiens</span>
+                <h2 class="section-title">Nos partenaires</h2>
+                <p class="section-description">
+                    Membres et partenaires qui soutiennent activement APTx.
+                </p>
+            </div>
+
+            <div class="support-wrapper">
+                <div class="support-track" id="support-track">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="creators" class="section creators-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-star"></i> Créateurs</h2>
+                <p>Découvrez les créateurs de APTx</p>
+            </div>
+            <div class="creators-grid" id="creatorsGrid">
+            </div>
+        </div>
+    </section>
+
+    <section id="publications" class="section publications-section">
+        <div class="container">
+            <div class="section-header">
+                <h2><i class="fas fa-file-alt"></i> Publications</h2>
+                <p>Explorez et partagez vos contenus</p>
+            </div>
+
+            <div id="authRequired" class="auth-required" style="display: none;">
+                <button class="btn btn-create" id="createPostBtn">
+                    <i class="fas fa-plus"></i> Créer une publication
+                </button>
+
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Rechercher une publication...">
+                </div>
+            </div>
+
+            <div class="publications-grid" id="publicationsGrid">
+            </div>
+
+            <div class="load-more-container" id="loadMoreContainer" style="display: none;">
+                <button class="btn btn-secondary" id="loadMoreBtn">
+                    <i class="fas fa-chevron-down"></i> Afficher plus
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div id="createPostModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-plus"></i> Nouvelle Publication</h3>
+                <button class="modal-close" id="closeCreateModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="createPostForm">
+                    <div class="form-group">
+                        <label for="postTitle">
+                            <i class="fas fa-heading"></i> Titre
+                        </label>
+                        <input type="text" id="postTitle" required maxlength="100" placeholder="Titre de votre publication">
+                    </div>
+                    <div class="form-group">
+                        <label for="postContent">
+                            <i class="fas fa-align-left"></i> Contenu
+                        </label>
+                        <textarea id="postContent" required placeholder="Écrivez votre contenu ici..."></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="cancelCreateBtn">Annuler</button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-check"></i> Publier
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="postDetailModal" class="modal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3 id="detailTitle"></h3>
+                <button class="modal-close" id="closeDetailModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="post-detail-header">
+                    <div class="post-author-info">
+                        <img id="detailAvatar" src="" alt="">
+                        <div>
+                            <p class="author-name" id="detailAuthor"></p>
+                            <p class="post-date" id="detailDate"></p>
+                        </div>
+                    </div>
+                    <div class="post-actions" id="postActions">
+                    </div>
+                </div>
+                <div class="post-detail-content" id="detailContent"></div>
+
+                <div class="post-detail-footer">
+                    <button class="btn btn-secondary btn-icon" id="shareBtn" title="Partager">
+                        <i class="fas fa-share-alt"></i> Partager
+                    </button>
+                    <button class="btn btn-secondary btn-icon" id="copyLinkBtn" title="Copier le lien">
+                        <i class="fas fa-link"></i> Copier le lien
+                    </button>
+                </div>
+
+                <div class="comments-section">
+                    <h4><i class="fas fa-comments"></i> Commentaires</h4>
+                    <form id="commentForm" class="comment-form">
+                        <textarea id="commentContent" placeholder="Ajouter un commentaire..." required></textarea>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Commenter
+                        </button>
+                    </form>
+                    <div class="comments-list" id="commentsList">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="editPostModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-edit"></i> Modifier la Publication</h3>
+                <button class="modal-close" id="closeEditModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="editPostForm">
+                    <input type="hidden" id="editPostId">
+                    <div class="form-group">
+                        <label for="editPostTitle">
+                            <i class="fas fa-heading"></i> Titre
+                        </label>
+                        <input type="text" id="editPostTitle" required maxlength="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="editPostContent">
+                            <i class="fas fa-align-left"></i> Contenu
+                        </label>
+                        <textarea id="editPostContent" required></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" id="cancelEditBtn">Annuler</button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i> Enregistrer
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-cog"></i> Paramètres</h3>
+                <button class="modal-close" id="closeSettingsModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="settings-section">
+                    <h4>Informations du Compte</h4>
+                    <div class="user-info-card">
+                        <img id="settingsAvatar" src="" alt="" class="settings-avatar">
+                        <div class="user-details">
+                            <p><strong>Pseudo:</strong> <span id="settingsUsername"></span></p>
+                            <p><strong>ID Discord:</strong> <span id="settingsId"></span></p>
+                            <p><strong>Membre depuis:</strong> <span id="settingsDate"></span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="settings-section">
+                    <h4>Badges</h4>
+                    <div class="badges-list" id="badgesList">
+                        <p class="no-badges">Aucun badge pour le moment</p>
+                    </div>
+                </div>
+
+                <div class="settings-actions">
+                    <button type="button" class="btn btn-danger" id="logoutSettingsBtn">
+                        <i class="fas fa-sign-out-alt"></i> Déconnexion
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4><i class="fas fa-code"></i> APTx</h4>
+                    <p>Plateforme professionnelle de publication</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Légal</h4>
+                    <ul>
+                        <li><a href="#cgu">Conditions Générales</a></li>
+                        <li><a href="#privacy">Politique de Confidentialité</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Aide</h4>
+                    <ul>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Réseaux</h4>
+                    <div class="social-links">
+                        <a href="#" title="Discord"><i class="fab fa-discord"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 APTx. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/public/app.js"></script>
+</body>
+</html>
