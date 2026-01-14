@@ -1,0 +1,23 @@
+[
+  {
+    "id": "1",
+    "name": "Larousse",
+    "description": "Créateurs officiels de la plateforme APTx",
+    "discordId": "1453078381099876515",
+    "avatar": "https://i.imgur.com/E6EOPMN.png"
+  },
+  {
+    "id": "2",
+    "name": "! ZeNight [BIO]",
+    "description": "Développeur principal & architecture serveur",
+    "discordId": "923618364469940234",
+    "avatar": "https://cdn.discordapp.com/avatars/923618364469940234/a_9f687707013be92ac3d2386af5bb2339.gif?size=1024&animated=true"
+  },
+  {
+    "id": "3",
+    "name": "Eboy.mic",
+    "description": "Développeur secondaire & architecture serveur",
+    "discordId": "1453502751349669908",
+    "avatar": "https://cdn.discordapp.com/avatars/1453502751349669908/1c3d9231611ef789d12d0639afe47e8a.webp?size=1024"
+  }
+]
